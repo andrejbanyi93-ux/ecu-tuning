@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECU Kódovanie | Profesionálne Úpravy Vozidiel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #0f1419;
+            color: #ffffff;
+        }
+
+        .accent-red {
+            color: #ef2b2d;
+        }
+
+        .btn-primary {
+            background-color: #ef2b2d;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #c71f20;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(239, 43, 45, 0.3);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(15, 20, 25, 0.95) 0%, rgba(30, 41, 59, 0.8) 100%);
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ef2b2d, transparent);
+        }
+
+        .card-industrial {
+            background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
+            border: 1px solid #2a3f4f;
+            transition: all 0.3s ease;
+        }
+
+        .card-industrial:hover {
+            border-color: #ef2b2d;
+            box-shadow: 0 0 20px rgba(239, 43, 45, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ef2b2d 0%, #c71f20 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .tech-logo-placeholder {
+            background: #1a2332;
+            border: 2px dashed #2a3f4f;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #7a8fa8;
+            transition: all 0.3s ease;
+        }
+
+        .tech-logo-placeholder:hover {
+            border-color: #ef2b2d;
+            background: rgba(239, 43, 45, 0.05);
+        }
+
+        .header {
+            background: #0f1419;
+            border-bottom: 1px solid #2a3f4f;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-red-600 to-red-700 rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">ECU</span>
+                </div>
+                <span class="text-xl font-bold text-white hidden sm:inline">ECU Tuning PRO</span>
+            </div>
+            <nav class="hidden md:flex gap-8">
+                <a href="#technology" class="text-gray-300 hover:text-red-500 transition">Technológia</a>
+                <a href="#process" class="text-gray-300 hover:text-red-500 transition">Proces</a>
+                <a href="#contact" class="text-gray-300 hover:text-red-500 transition">Kontakt</a>
+            </nav>
+            <button class="btn-primary text-white px-6 py-2 rounded font-semibold text-sm">
+                OBJEDNAŤ TERAZ
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-gradient py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="hero-text">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Maximálny <span class="accent-red">Výkon</span> Vášho Auta
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-4 leading-relaxed">
+                        Profesionálne kódovanie ECU a úpravy riadiacich jednotiek s <strong>zárukou</strong> a <strong>originálnym hardvérom</strong>
+                    </p>
+                    <p class="text-base md:text-lg text-gray-400 mb-8">
+                        Rýchlo. Bezpečne. Overené technológiou. 250+ upravených vozidiel s 98% spokojnosťou.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="btn-primary text-white px-8 py-4 rounded font-bold text-lg hover:shadow-lg transition">
+                            SPOČÍTAJ VÝKON
+                        </button>
+                        <button class="border-2 border-gray-400 text-white px-8 py-4 rounded font-bold text-lg hover:border-red-500 hover:text-red-500 transition">
+                            BEZPLATNÁ DIAGNOSTIKA
+                        </button>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-col sm:flex-row gap-8 mt-12 pt-8 border-t border-gray-600">
+                        <div>
+                            <div class="text-3xl font-bold accent-red">20+</div>
+                            <div class="text-gray-400">Rokov skúseností</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold accent-red">250+</div>
+                            <div class="text-gray-400">Upravených vozidiel</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold accent-red">98%</div>
+                            <div class="text-gray-400">Spokojnosť zákazníkov</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Element -->
+                <div class="hidden md:flex items-center justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-transparent opacity-20 blur-3xl"></div>
+                        <div class="relative bg-gradient-to-br from-gray-800 to-black border-2 border-red-500 rounded-lg p-8">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4">⚙️</div>
+                                <h3 class="text-2xl font-bold mb-2">ECU TUNING</h3>
+                                <p class="text-gray-400">Originálny hardware</p>
+                                <p class="text-gray-400">Profesionálna diagnostika</p>
+                                <p class="text-gray-400">12 mesiacov záruka</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider"></div>
+
+    <!-- OBJECTION BUSTERS SECTION -->
+    <section class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+                Prečo Ľudia Dôverujú <span class="accent-red">ECU Tuning PRO</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1: Záruka -->
+                <div class="card-industrial p-6 rounded-lg">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-lg font-bold mb-3">Záruka 12 Mesiacov</h3>
+                    <p class="text-gray-400 text-sm">Ak niečo pôjde zle, vrátime peniaze. Bez výhovoriek, bez podmienok.</p>
+                </div>
+
+                <!-- Card 2: Hardvér -->
+                <div class="card-industrial p-6 rounded-lg">
+                    <div class="text-4xl mb-4">✓</div>
+                    <h3 class="text-lg font-bold mb-3">Originálny Hardvér</h3>
+                    <p class="text-gray-400 text-sm">Bez čipov tretích strán. Iba overené profesionálne riešenia s diagnostikou.</p>
+                </div>
+
+                <!-- Card 3: Rýchlosť -->
+                <div class="card-industrial p-6 rounded-lg">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-lg font-bold mb-3">Rýchlo a Presne</h3>
+                    <p class="text-gray-400 text-sm">Väčšina vozidiel hotová za 2-4 hodiny. Výsledky viditeľné hneď.</p>
+                </div>
+
+                <!-- Card 4: Diagnostika -->
+                <div class="card-industrial p-6 rounded-lg">
+                    <div class="text-4xl mb-4">🔍</div>
+                    <h3 class="text-lg font-bold mb-3">Diagnostika Zadarmo</h3>
+                    <p class="text-gray-400 text-sm">Pred každou úpravou: kompletná kontrola bezpečnosti a stavu vášho motora.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider"></div>
+
+    <!-- TECHNOLOGY SECTION -->
+    <section id="technology" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-gray-950">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                Naša <span class="accent-red">Technológia</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+                Používame len najmodernejší profesionálny hardware od svetových lídrov v ECU kódovaní
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Logo Placeholder 1 -->
+                <div class="tech-logo-placeholder h-32">
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">📡</div>
+                        <div class="text-sm font-semibold">CMDFlash</div>
+                        <div class="text-xs text-gray-500">Professional ECU Tools</div>
+                    </div>
+                </div>
+
+                <!-- Logo Placeholder 2 -->
+                <div class="tech-logo-placeholder h-32">
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">🔧</div>
+                        <div class="text-sm font-semibold">Autotuner</div>
+                        <div class="text-xs text-gray-500">Advanced Diagnostics</div>
+                    </div>
+                </div>
+
+                <!-- Logo Placeholder 3 -->
+                <div class="tech-logo-placeholder h-32">
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">⚙️</div>
+                        <div class="text-sm font-semibold">OBD Solutions</div>
+                        <div class="text-xs text-gray-500">Real-time Monitoring</div>
+                    </div>
+                </div>
+
+                <!-- Logo Placeholder 4 -->
+                <div class="tech-logo-placeholder h-32">
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">🛠️</div>
+                        <div class="text-sm font-semibold">JTAG Adapter</div>
+                        <div class="text-xs text-gray-500">Hardware Integration</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Details -->
+            <div class="mt-16 bg-gradient-to-r from-gray-900 to-black border border-gray-800 rounded-lg p-8">
+                <h3 class="text-2xl font-bold mb-6">Čo Robíme Inak</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <div class="text-red-500 text-2xl font-bold mb-2">✓</div>
+                        <h4 class="font-bold mb-2">Kompletná Diagnostika</h4>
+                        <p class="text-gray-400 text-sm">Analýza všetkých parametrov motora pred začatím práce</p>
+                    </div>
+                    <div>
+                        <div class="text-red-500 text-2xl font-bold mb-2">✓</div>
+                        <h4 class="font-bold mb-2">Bezpečnosť Garantovaná</h4>
+                        <p class="text-gray-400 text-sm">Testovanie v bezpečných limitoch bez poškodenia motorismu</p>
+                    </div>
+                    <div>
+                        <div class="text-red-500 text-2xl font-bold mb-2">✓</div>
+                        <h4 class="font-bold mb-2">Transparentnosť 100%</h4>
+                        <p class="text-gray-400 text-sm">Jasné ceny, bez skrytých poplatkov, výsledky v čase</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider"></div>
+
+    <!-- PROCESS SECTION -->
+    <section id="process" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                Proces Úpravy <span class="accent-red">ECU</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+                4 jednoduché kroky od diagnostiky až k testovaniu na dynamometri
+            </p>
+
+            <!-- Steps Timeline -->
+            <div class="space-y-8">
+                <!-- Step 1 -->
+                <div class="flex gap-6 md:gap-8">
+                    <div class="step-number">1</div>
+                    <div class="flex-1 bg-gradient-to-r from-gray-900 to-black border border-gray-800 rounded-lg p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">DIAGNOSTIKA (30 minút - ZADARMO)</h3>
+                        <p class="text-gray-400 mb-4">
+                            Prvý krok je vždy bezplatná analýza vášho vozidla. Pôjdeme si:
+                        </p>
+                        <ul class="text-gray-400 space-y-2 ml-4">
+                            <li>✓ Všetky OBD parametre</li>
+                            <li>✓ Aktuálny výkon motora</li>
+                            <li>✓ Možné úpravy (Stage 1, 2, 3)</li>
+                            <li>✓ Bezpečnostné obavy</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex gap-6 md:gap-8">
+                    <div class="step-number">2</div>
+                    <div class="flex-1 bg-gradient-to-r from-gray-900 to-black border border-gray-800 rounded-lg p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">KONZULTÁCIA A VÝBER (15 minút)</h3>
+                        <p class="text-gray-400 mb-4">
+                            Rozoberieme si všetky možnosti a vyberieme ideálnu úpravu pre vaše vozidlo:
+                        </p>
+                        <ul class="text-gray-400 space-y-2 ml-4">
+                            <li>✓ Jaké sú všetky dostupné možnosti</li>
+                            <li>✓ Aké budú nárast výkonu a spotreba</li>
+                            <li>✓ Aké sú náklady</li>
+                            <li>✓ Čas potrebný na realizáciu</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex gap-6 md:gap-8">
+                    <div class="step-number">3</div>
+                    <div class="flex-1 bg-gradient-to-r from-gray-900 to-black border border-gray-800 rounded-lg p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">ÚPRAVA ECU (2-4 HODINY)</h3>
+                        <p class="text-gray-400 mb-4">
+                            Profesionálne kódovanie s najpresnejším hardvérom:
+                        </p>
+                        <ul class="text-gray-400 space-y-2 ml-4">
+                            <li>✓ Čítanie ECU súborov</li>
+                            <li>✓ Optimalizácia parametrov</li>
+                            <li>✓ Bezpečnostné testy v čase realného čítania</li>
+                            <li>✓ Navrátenie súborov do vozidla</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex gap-6 md:gap-8">
+                    <div class="step-number">4</div>
+                    <div class="flex-1 bg-gradient-to-r from-gray-900 to-black border border-gray-800 rounded-lg p-6 md:p-8">
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">TESTOVANIE A OVERENIE (30 minút)</h3>
+                        <p class="text-gray-400 mb-4">
+                            Finálne overenie a výsledky:
+                        </p>
+                        <ul class="text-gray-400 space-y-2 ml-4">
+                            <li>✓ Znovu čítanie OBD parametrov</li>
+                            <li>✓ Porovnanie výkonu pred/po</li>
+                            <li>✓ Bezpečnostné kontroly</li>
+                            <li>✓ Doživotná podpora a záruka 12 mesiacov</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="mt-16 text-center">
+                <button class="btn-primary text-white px-10 py-4 rounded font-bold text-lg">
+                    OBJEDNAŤ DIAGNOSTIKU TERAZ
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider"></div>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-gray-950">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+                Pripravený na Zmenu? <span class="accent-red">Kontaktuj Nás</span>
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center mb-12">
+                <div class="border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl mb-4">📞</div>
+                    <h3 class="font-bold mb-2">Telefón</h3>
+                    <p class="text-gray-400">+421 XXX XXX XXX</p>
+                </div>
+                <div class="border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl mb-4">💬</div>
+                    <h3 class="font-bold mb-2">WhatsApp</h3>
+                    <p class="text-gray-400">+421 XXX XXX XXX</p>
+                </div>
+                <div class="border border-gray-800 rounded-lg p-6">
+                    <div class="text-3xl mb-4">📧</div>
+                    <h3 class="font-bold mb-2">Email</h3>
+                    <p class="text-gray-400">info@ecutuning.sk</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-gradient-to-b from-gray-900 to-black border border-gray-800 rounded-lg p-8">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Meno</label>
+                            <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:border-red-500 focus:outline-none" placeholder="Vaše meno">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Email</label>
+                            <input type="email" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:border-red-500 focus:outline-none" placeholder="vaš@email.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Vozidlo (značka a model)</label>
+                        <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:border-red-500 focus:outline-none" placeholder="napr. BMW 320d 2015">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Správa</label>
+                        <textarea class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 text-white focus:border-red-500 focus:outline-none h-32" placeholder="Vaša správa..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary text-white px-8 py-3 rounded font-bold w-full">
+                        POSLAŤ SPRÁVU
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-800 bg-black py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold mb-4">ECU Tuning PRO</h4>
+                    <p class="text-gray-400 text-sm">Profesionálne kódovanie ECU s zárukou a originálnym hardvérom</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Služby</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li><a href="#" class="hover:text-red-500 transition">Stage 1 Tuning</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition">Stage 2 Tuning</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition">Diagnostika</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Informácie</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li><a href="#" class="hover:text-red-500 transition">O nás</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition">Galéria</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Právne</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li><a href="#" class="hover:text-red-500 transition">Zásady ochrany</a></li>
+                        <li><a href="#" class="hover:text-red-500 transition">Podmienky použitia</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 ECU Tuning PRO. Všetky práva vyhradené. | Profesionálne kódovanie ECU vozidiel</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
